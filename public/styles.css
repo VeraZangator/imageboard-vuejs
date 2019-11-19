@@ -1,0 +1,335 @@
+body {
+    background-color: black;
+    display: grid;
+    margin: 50px;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid grey;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-family: "Zilla Slab Highlight", cursive;
+    color: white;
+    font-size: 80px;
+    letter-spacing: 1em;
+    margin: 0;
+    padding-left: 1em;
+}
+
+#main {
+    display: grid;
+    justify-items: center;
+    /* width: 100%; */
+}
+
+.upload {
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    height: 80px;
+}
+
+.username {
+    width: 150px;
+}
+
+.desc {
+    width: 450px;
+}
+
+.upload input {
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    font-size: 15px;
+    height: 20px;
+    color: white;
+    margin-right: 15px;
+}
+
+.upload input:focus {
+    outline: none;
+    border: none;
+}
+
+::placeholder {
+    color: #e2d6cc;
+}
+
+.inputfile {
+    display: none;
+    visibility: hidden;
+}
+
+.file {
+    padding-left: 25px;
+}
+
+.file img {
+    width: 30px;
+}
+
+.file:hover {
+    cursor: pointer;
+}
+
+.error {
+    font-style: italic;
+    color: white;
+    height: 30px;
+    width: 150px;
+    margin-bottom: 25px;
+}
+
+.error p {
+    /* align-self: flex-start; */
+}
+
+.upload button {
+    margin-left: 25px;
+}
+
+/* input {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 150px;
+    height: 20px;
+    padding: 5px;
+} */
+.imagecontainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    /* justify-self: center; */
+    justify-content: center;
+}
+
+.image {
+    width: 350px;
+    height: 354px;
+    position: relative;
+    margin: 8px;
+}
+
+.imgboard {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    filter: blur(5px);
+    border: 1px solid black;
+    border-radius: 175px;
+    -webkit-transition: -webkit-filter 500ms linear;
+}
+
+h3 {
+    font-size: 20px;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    bottom: -5px;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+button {
+    border-radius: 15px;
+    height: 30px;
+    width: 80px;
+}
+
+.delbutton {
+    width: 0px;
+    background-color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.delbutton:hover {
+    cursor: pointer;
+}
+
+.imgboard:hover {
+    filter: none;
+}
+
+.more {
+    /* position: absolute; */
+    /* bottom: 15px; */
+    /* left: 50%; */
+    margin: 50px;
+    justify-self: center;
+    align-self: center;
+    display: block;
+}
+
+.component {
+    background-color: rgba(0, 5, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: grid;
+}
+
+.card {
+    align-self: center;
+    justify-self: center;
+    background-color: white;
+    width: 60vw;
+    height: 80vh;
+    border-radius: 50px;
+    display: grid;
+    grid-auto-flow: column;
+    padding: 60px;
+}
+
+.card a {
+    align-self: center;
+    justify-self: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.info {
+    /* align-self: center; */
+    padding-top: 40px;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 35vw;
+}
+
+.date {
+    font-style: italic;
+    color: grey;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.info h2 {
+    /* text-align: center; */
+    padding: 0;
+    margin: 0;
+}
+
+.description {
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-weigth: 0;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.comments-box {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 70%;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.comments-box input {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    font-size: 15px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.comments-box .username {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.comments-box input:focus {
+    outline: none;
+    border: none;
+}
+
+.comments-box button {
+    margin-top: 20px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 250px;
+    overflow-y: scroll;
+}
+
+.comments p {
+    font-size: 10px;
+    color: grey;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e2d6cc;
+    margin-top: 5px;
+    display: flex;
+    max-width: 250px;
+}
+
+.comment>* {
+    margin: 0;
+    padding: 0;
+}
+
+.comment h4 {
+    font-weigth: 900;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.comment p {
+    font-size: 14px;
+}
+
+.errorco {
+    font-style: italic;
+    color: black;
+    height: 30px;
+    width: 150px;
+    margin-bottom: 25px;
+}
+
+.close {
+    justify-self: center;
+    align-self: start;
+    margin-top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.imgmodal {
+    width: 35vw;
+    max-height: 70vh;
+    object-fit: cover;
+}

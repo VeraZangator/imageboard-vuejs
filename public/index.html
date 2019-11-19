@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <h1>iBoard</h1>
+        </header>
+        <first-component @empty="emptyImages" @close="closeMe" :selected-image="selectedImage" v-if=" selectedImage" :images="images">
+        </first-component>
+        <div class="upload">
+            <input v-model="username" name="username" placeholder="Username..." class="username">
+            <input v-model="title" name="title" placeholder="Title..." class="username">
+            <input v-model="desc" name="description" placeholder="Description..." clase="desc">
+            <label class="file">
+                <input type="file" accept="image/*" @change="fileSelected" class="inputfile">
+                <img src="/img_234957.png">
+            </label>
+            <button @click="upload"> Upload </button>
+        </div>
+        <div class="error">
+            <p v-if="error"> Oops, please try again</p>
+        </div>
+        <div class="imagecontainer">
+            <div class="image" v-for="image in images" v-if="images.length">
+                <a :href="'#'+image.id">
+                    <img class="imgboard" :src="image.url">
+                    <h3>{{image.title}}</h3>
+                </a>
+            </div>
+        </div>
+        <button v-if="images.length >= 10 && showButton" @click="moreImages" class="more">More</button>
+    </div>
+    <footer>®Vera Zang 2019</footer>
+    <script type="text/x-template" id="template">
+        <div class ="component">
+            <div class="card">
+                <a :href="'#'+lastId"><</a>
+                <div class="info">
+                    <img class="imgmodal" :src="info.url">
+                    <p class="date">Uploaded by {{info.username}} on {{info.created_at}}</p>
+                    <h2>{{info.title}}<button class="delbutton" @click="deleteImage">🗑️</button></h2><p class="description">{{info.description}}</p>
+                </div>
+                <div class="comments-box">
+                    <input v-model="comments_username" name="comments_username" placeholder="Username..." class="username">
+                    <input v-model="comment" name="comment" placeholder="Add your comment here..." class="commentin">
+                    <button @click="submit">Submit</button>
+                    <div class="errorco">
+                        <p v-if="error"> Oops, please try again</p>
+                    </div>
+                <div class = "comments">
+                    <div v-for="comment in comments">
+                        <div class="comment">
+                        <h4>{{comment.comments_username}}</h4>
+                        {{comment.comment}}
+                        </div>
+                        <p>{{comment.comments_created_at}}</p>
+                    </div>
+                </div>
+                </div>
+                <div class="close" @click="closeModal">X</div>
+                <a :href="'#'+nextId">></a>
+            </div>
+       </div>
+   </script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
